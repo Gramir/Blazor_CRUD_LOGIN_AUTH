@@ -1,0 +1,75 @@
+﻿@page "/registro"
+@inject Tarea6.Servicios.UsuarioServicio servicio
+@inject AuthenticationStateProvider auth
+@inject NavigationManager nav
+@inject IJSRuntime Js
+
+
+<div class="col-5 bg-light m-2 justify-content-start">
+    <div class="p-3 mb-3 bg-primary text-white text-center">Registrar Usuario</div>
+    <EditForm Model="@NuevoUsuario">
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="email" id="correo" class="form-control" @bind-value="@NuevoUsuario.Correo" />
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="nombre" class="form-control" @bind="@NuevoUsuario.Nombre" />
+        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" id="contraseña" class="form-control" @bind="@NuevoUsuario.Clave" />
+        </div>
+        <div class="form-group">
+            <label>Selecciona tu color favorito</label>
+            <input type="color" class="form-control" @bind="@NuevoUsuario.Color"/>
+        </div>
+        <div class="text-center p-3 mb-3">
+            <button class="btn btn-info" @onclick="Verificar"> Completar Registro</button>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    public Tarea6.Models.Usuario NuevoUsuario { get; set; } = new Tarea6.Models.Usuario();
+    List<Tarea6.Models.Usuario> Usuarios = new List<Tarea6.Models.Usuario>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Usuarios = await servicio.GetUsuariosAsync();
+    }
+
+    private async Task AgregarUsuario()
+    {
+
+        await servicio.AgregarUsuario(NuevoUsuario);
+        await Js.InvokeAsync<bool>("confirm", "Usuario Guardado!");
+        nav.NavigateTo("/iniciar");
+
+    }
+
+    private async Task Verificar()
+    {
+
+        if (NuevoUsuario.Correo == null || NuevoUsuario.Clave == null || NuevoUsuario.Nombre == null || NuevoUsuario.Color == null)
+        {
+            await Js.InvokeAsync<bool>("confirm", "Debe completar toda la informacion");
+        }
+        else
+        {
+            var match = Usuarios.Any(u => u.Correo == NuevoUsuario.Correo);
+            if (match == true)
+            {
+                await Js.InvokeAsync<bool>("confirm", "Correo ya existe");
+            }
+            else
+            {
+               await AgregarUsuario();
+            }
+
+        }
+    }
+
+
+}
