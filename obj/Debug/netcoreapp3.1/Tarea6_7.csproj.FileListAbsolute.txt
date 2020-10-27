@@ -95,6 +95,8 @@ F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3
 F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\Tarea6_7.dll
 F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\Tarea6_7.pdb
 F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\Tarea6_7.genruntimeconfig.cache
-F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\Tarea6_7.csprojAssemblyReference.cache
 F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Perfil.razor.g.cs
 F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\Razor\Pages\Perfil.razor.g.cs
+F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Mapa.razor.g.cs
+F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\Razor\Pages\Mapa.razor.g.cs
+F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\obj\Debug\netcoreapp3.1\Tarea6_7.csprojAssemblyReference.cache

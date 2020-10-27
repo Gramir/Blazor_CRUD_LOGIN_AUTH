@@ -73,6 +73,13 @@ using Tarea6_7.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 10 "F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\_Imports.razor"
+using Tarea6.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\Pages\Perfil.razor"
            [Authorize]
 

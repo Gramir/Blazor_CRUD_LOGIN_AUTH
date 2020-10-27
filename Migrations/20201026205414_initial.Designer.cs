@@ -8,8 +8,8 @@ using Tarea6.Data;
 namespace Tarea6_7.Migrations
 {
     [DbContext(typeof(Tarea6DbContext))]
-    [Migration("20201025203033_intinal")]
-    partial class intinal
+    [Migration("20201026205414_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,7 +29,10 @@ namespace Tarea6_7.Migrations
                     b.Property<string>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Lat_y_Long")
+                    b.Property<string>("Lat")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Long")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Lugar")

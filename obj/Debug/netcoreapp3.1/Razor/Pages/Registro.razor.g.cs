@@ -72,6 +72,13 @@ using Tarea6_7.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "F:\Users\Kylenz\Documents\Tareas\Programacion III\Tarea6_7\_Imports.razor"
+using Tarea6.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/registro")]
     public partial class Registro : Microsoft.AspNetCore.Components.ComponentBase
     {

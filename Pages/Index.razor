@@ -2,7 +2,7 @@
 @inject Tarea6.Servicios.Tesoroervicio servicio
 @inject Tarea6.Servicios.UsuarioServicio servicios
 @inject Blazored.SessionStorage.ISessionStorageService sessionStorage
-@inject IJSRuntime iJSRuntime;
+@inject IJSRuntime iJSRuntime
 @attribute [Authorize]
 
 <h2 style="background-color:@color;">Hola, @nombr</h2>
@@ -15,7 +15,8 @@
                 <th>Descripcion</th>
                 <th>Fecha</th>
                 <th>Lugar</th>
-                <th>Latitud, Longitud</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
                 <th>Valor</th>
                 <th>Peso</th>
                 <th>URL de referencia</th>
@@ -33,7 +34,8 @@
                         <td>@Tesoro.Descripcion</td>
                         <td>@Tesoro.Fecha</td>
                         <td>@Tesoro.Lugar</td>
-                        <td>@Tesoro.Lat_y_Long</td>
+                        <td>@Tesoro.Lat</td>
+                        <td>@Tesoro.Long</td>
                         <td>@Tesoro.Valor</td>
                         <td>@Tesoro.Peso</td>
                         <td>@Tesoro.URL</td>
@@ -72,8 +74,12 @@
                 <input type="text" class="form-control" @bind="@NuevoTeso.Lugar" />
             </div>
             <div class="form-group">
-                <label>Latitud, Longitud</label>
-                <input type="text" class="form-control" @bind="@NuevoTeso.Lat_y_Long" />
+                <label>Latitud</label>
+                <input type="text" class="form-control" @bind="@NuevoTeso.Lat" />
+            </div>
+            <div class="form-group">
+                <label>Longitud</label>
+                <input type="text" class="form-control" @bind="@NuevoTeso.Long" />
             </div>
             <div class="form-group">
                 <label>Valor</label>
@@ -115,8 +121,12 @@
                 <input type="text" class="form-control" @bind="@EditarTeso.Lugar" />
             </div>
             <div class="form-group">
-                <label>Latitud, Longitud</label>
-                <input type="text" class="form-control" @bind="@EditarTeso.Lat_y_Long" />
+                <label>Latitud</label>
+                <input type="text" class="form-control" @bind="@EditarTeso.Lat" />
+            </div>
+            <div class="form-group">
+                <label>Longitud</label>
+                <input type="text" class="form-control" @bind="@EditarTeso.Long" />
             </div>
             <div class="form-group">
                 <label>Valor</label>
@@ -188,6 +198,11 @@
     {
         NuevoTeso.Usuario = Id;
 
+        if (NuevoTeso.URL == null)
+        {
+            NuevoTeso.URL = "<none>";
+        }
+
         await servicio.AgregarTesoro(NuevoTeso);
 
         NuevoTeso = new Tarea6.Models.Tesoro();
@@ -204,6 +219,11 @@
 
     private async Task EditarTesoro()
     {
+        if (EditarTeso.URL == null)
+        {
+            EditarTeso.URL = "<none>";
+        }
+
         await servicio.EditarTesoro(EditarTeso);
         EditarTeso = new Tarea6.Models.Tesoro();
         await RefrescarTesoro();

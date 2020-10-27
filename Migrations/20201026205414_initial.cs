@@ -2,7 +2,7 @@
 
 namespace Tarea6_7.Migrations
 {
-    public partial class intinal : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,8 @@ namespace Tarea6_7.Migrations
                     Descripcion = table.Column<string>(nullable: true),
                     Fecha = table.Column<string>(nullable: true),
                     Lugar = table.Column<string>(nullable: true),
-                    Lat_y_Long = table.Column<string>(nullable: true),
+                    Lat = table.Column<string>(nullable: true),
+                    Long = table.Column<string>(nullable: true),
                     Valor = table.Column<string>(nullable: true),
                     Peso = table.Column<string>(nullable: true),
                     URL = table.Column<string>(nullable: true),

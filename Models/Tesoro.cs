@@ -12,7 +12,8 @@ namespace Tarea6.Models
         public string Descripcion { get; set; }
         public string Fecha { get; set; }
         public string Lugar { get; set; }
-        public string Lat_y_Long { get; set; }
+        public string Lat { get; set; }
+        public string Long { get; set; }
         public string Valor { get; set; }
         public string Peso { get; set; }
         public string URL { get; set; }

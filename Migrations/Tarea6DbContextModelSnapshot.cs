@@ -27,7 +27,10 @@ namespace Tarea6_7.Migrations
                     b.Property<string>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Lat_y_Long")
+                    b.Property<string>("Lat")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Long")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Lugar")

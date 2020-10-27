@@ -1,0 +1,61 @@
+﻿@page "/mapa"
+@inject Tarea6.Servicios.Tesoroervicio servicio
+@inject Tarea6.Servicios.UsuarioServicio servicios
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@inject IJSRuntime Js
+@attribute [Authorize]
+
+@if (Tesoros == null)
+{
+    <h1>No hay Tesoros que ubicar!</h1>
+}
+else
+{
+    <div id="myMap" style="height:800px"></div>
+}
+
+
+@code {
+
+    List<Tarea6.Models.Tesoro> Tesoros = new List<Tarea6.Models.Tesoro>();
+    List<Tarea6.Models.Usuario> Usuarios = new List<Tarea6.Models.Usuario>();
+    List<Tarea6.Models.Tesoro> Ubicaciones = new List<Tarea6.Models.Tesoro>();
+    private Blazored.SessionStorage.ISessionStorageService _sessionStorage;
+    string corr;
+    int Id;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        Tesoros = await servicio.GetTesoroAsync();
+        Usuarios = await servicios.GetUsuariosAsync();
+        _sessionStorage = sessionStorage;
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Ubicacion();
+            await Js.InvokeVoidAsync("GenerateMap", Ubicaciones);
+        }
+    }
+
+    private async Task Ubicacion()
+    {
+        corr = await sessionStorage.GetItemAsync<string>("correo");
+        var usu = Usuarios.FirstOrDefault(u => u.Correo.Equals(corr));
+        if (usu == null)
+        {
+
+        }
+        else
+        {
+            Id = usu.Id;
+            Ubicaciones = Tesoros.Where(s => s.Usuario == Id).ToList();
+      
+        }
+    }
+
+}
