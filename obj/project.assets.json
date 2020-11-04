@@ -29,18 +29,6 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Blazor.HttpClient/3.2.0-preview3.20168.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Json": "4.7.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Blazor.HttpClient.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Blazor.HttpClient.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Components/3.1.4": {
         "type": "package",
         "dependencies": {
@@ -565,20 +553,6 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
         "microsoft.aspnetcore.authorization.3.1.4.nupkg.sha512",
         "microsoft.aspnetcore.authorization.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.Blazor.HttpClient/3.2.0-preview3.20168.3": {
-      "sha512": "6J1vBdhSnGW53BQsKeIjI8algTQdW8+Dnx/R9eZ/ldhtY8mx2KXOSkEVr7Tb0xwg5OM5+rHZS+PuzIv1nuvDCg==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.blazor.httpclient/3.2.0-preview3.20168.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.txt",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Blazor.HttpClient.dll",
-        "microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",
-        "microsoft.aspnetcore.blazor.httpclient.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Components/3.1.4": {
@@ -1393,7 +1367,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Blazored.SessionStorage >= 1.0.12",
-      "Microsoft.AspNetCore.Blazor.HttpClient >= 3.2.0-preview3.20168.3",
       "Microsoft.EntityFrameworkCore >= 3.1.9",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.9",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.9"
@@ -1439,10 +1412,6 @@
           "Blazored.SessionStorage": {
             "target": "Package",
             "version": "[1.0.12, )"
-          },
-          "Microsoft.AspNetCore.Blazor.HttpClient": {
-            "target": "Package",
-            "version": "[3.2.0-preview3.20168.3, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
